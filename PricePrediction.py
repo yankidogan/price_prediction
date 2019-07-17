@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[10]:
-
 
 get_ipython().run_line_magic('matplotlib', 'inline')
 
@@ -218,28 +213,6 @@ def on_button_clicked(b):
     
 
 button_predict.on_click(on_button_clicked)
-
-
-# In[ ]:
-
-
-y_pred = model.predict(X_test)
-
-y_pred_inv = y_normalizer.inverse_transform(y_pred)
-y_test_inv = y_normalizer.inverse_transform(y_test)
-
-plt.scatter(y_pred_inv, y_test_inv)
-plt.xlabel('Prediction')
-plt.ylabel('Real value')
-
-diagonal = np.linspace(400000, 1500, 100)
-plt.plot(diagonal, diagonal, '-r')
-plt.xlabel('Predicted price (€)')
-plt.ylabel('Price (€)')
-plt.show()
-
-
-# In[ ]:
 
 
 
